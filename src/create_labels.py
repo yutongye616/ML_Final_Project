@@ -2,11 +2,9 @@ import os
 import xml.etree.ElementTree as ET
 import pandas as pd
 
-# Path to your VOC2012 folder (based on your screenshot)
 VOC_ROOT = os.path.join("data", "VOC2012")
 ANNOTATIONS_DIR = os.path.join(VOC_ROOT, "Annotations")
 
-# Choose your 5 classes (change here if you want others)
 CLASSES = ["person", "car", "dog", "cat", "bicycle"]
 
 def main():
@@ -20,7 +18,6 @@ def main():
         tree = ET.parse(xml_path)
         root = tree.getroot()
 
-        # start with all zeros
         labels = {cls: 0 for cls in CLASSES}
 
         for obj in root.findall("object"):
