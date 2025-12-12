@@ -68,9 +68,6 @@ def train():
         avg_loss = total_loss / len(train_loader)
         print("Training loss:", avg_loss)
 
-        # (optional) you can add a validation loop here later
-
-    # Save inside ML_Final_Project/results/
     os.makedirs("results", exist_ok=True)
     save_path = os.path.join("results", "model_final.pth")
     torch.save(model.state_dict(), save_path)
